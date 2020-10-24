@@ -6,9 +6,11 @@ using Pathfinding;
 
 public class LevelManager : MonoBehaviour {
     [SerializeField] GameObject[] levels;
-
+    [SerializeField] bool proceduralGeneration;
+    [SerializeField] ProceduralGeneratorLevel proceduralGeneratorLevel;
     GameManager gm;
     int actualLevel = 1;
+    int indexLevel = 1;
     public static event Action<LevelManager> ChangedLevel;
 
     [SerializeField] AstarPath paths;
@@ -120,16 +122,21 @@ public class LevelManager : MonoBehaviour {
             }
         }
     }
+    //ACA CAMBIO DE NIVEL (CHEKEAR ACA PARA HACER EL CAMBIO DE NIVEL PROSEDURAL)
     public void ChangeLevel() {
-        //Debug.Log("ALFAJOR");
+
         actualLevel++;
         if (actualLevel > 3)
             actualLevel = 1;
-
-
-
         StartCoroutine(Change());
 
+        if (proceduralGeneration)
+        {
+            indexLevel = proceduralGeneratorLevel.GenerateLevel() + 1;
+            actualLevel = indexLevel;
+        }
+        else
+            indexLevel = actualLevel;
 
         // int doorToOpen = Random.Range(0, doors.Length);
         // while (doors[doorToOpen] == door.gameObject)
@@ -148,8 +155,8 @@ public class LevelManager : MonoBehaviour {
             if (levels[i] != null)
                 levels[i].SetActive(false);
 
-        if (levels[actualLevel] != null)
-            levels[actualLevel].SetActive(true);
+        if (levels[indexLevel] != null)
+            levels[indexLevel].SetActive(true);
 
         if (actualLevel == 1) {
             for (int i = 0; i < doorsLvl1.Count; i++)

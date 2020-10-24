@@ -101,29 +101,34 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject != null)
         {
-            collision.gameObject.GetComponent<Boss>().ReceiveDamage(GetDamage());
-            float x;
-            if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
-                x = movement.x;
-            else
-                x = 0;
-            GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
-            Destroy(gameObject);
-            Destroy(go, 1.0f);
-            return;
-        }
-        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("WallUp") || collision.gameObject.CompareTag("WallDown"))
-        {
-            float x;
-            if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
-                x = movement.x;
-            else
-                x = 0;
-            GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
-            Destroy(gameObject);
-            Destroy(go, 1.0f);
+            if (collision.gameObject.CompareTag("Boss"))
+            {
+                Boss b = collision.gameObject.GetComponent<Boss>();
+                if (b != null)
+                    b.ReceiveDamage(GetDamage());
+                float x;
+                if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
+                    x = movement.x;
+                else
+                    x = 0;
+                GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
+                Destroy(gameObject);
+                Destroy(go, 1.0f);
+                return;
+            }
+            if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("WallUp") || collision.gameObject.CompareTag("WallDown"))
+            {
+                float x;
+                if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
+                    x = movement.x;
+                else
+                    x = 0;
+                GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
+                Destroy(gameObject);
+                Destroy(go, 1.0f);
+            }
         }
     }
     public void SetUser(User _user)
