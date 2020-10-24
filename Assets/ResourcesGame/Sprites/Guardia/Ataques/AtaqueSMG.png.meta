@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: d5b040c3898e16441af557699026c2c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4710280010465031397
+    second: AtaqueSMG_0
+  - first:
+      213: 7134977359541580210
+    second: AtaqueSMG_1
+  - first:
+      213: 656439761528863906
+    second: AtaqueSMG_2
+  - first:
+      213: 3671345826305983659
+    second: AtaqueSMG_3
+  - first:
+      213: -2357997060338779628
+    second: AtaqueSMG_4
+  - first:
+      213: 8089957419482883288
+    second: AtaqueSMG_5
+  - first:
+      213: -329404832459298465
+    second: AtaqueSMG_6
+  - first:
+      213: -6539586624524730239
+    second: AtaqueSMG_7
+  - first:
+      213: 4284374113381175822
+    second: AtaqueSMG_8
+  - first:
+      213: -4078068352849692157
+    second: AtaqueSMG_9
+  - first:
+      213: -6469696927517873177
+    second: AtaqueSMG_10
+  - first:
+      213: 4341192205454489033
+    second: AtaqueSMG_11
+  - first:
+      213: -1749959736111690739
+    second: AtaqueSMG_12
+  - first:
+      213: -6499409554528292910
+    second: AtaqueSMG_13
+  - first:
+      213: 1502825778292503168
+    second: AtaqueSMG_14
+  - first:
+      213: 2078772317033096321
+    second: AtaqueSMG_15
+  - first:
+      213: -6409610311311483485
+    second: AtaqueSMG_16
+  - first:
+      213: 1314012202703961258
+    second: AtaqueSMG_17
+  - first:
+      213: -4466305911152454287
+    second: AtaqueSMG_18
+  - first:
+      213: -7758504484522807410
+    second: AtaqueSMG_19
+  - first:
+      213: -1455163452330273126
+    second: AtaqueSMG_20
+  - first:
+      213: 1622991058010764182
+    second: AtaqueSMG_21
+  - first:
+      213: -4759778908271557493
+    second: AtaqueSMG_22
+  - first:
+      213: 3474629266970093473
+    second: AtaqueSMG_4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AtaqueSMG_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 96
+        height: 132
+      alignment: 9
+      pivot: {x: 0.45643678, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bcb9f5949b1aeb0800000000000000
+      internalID: -4710280010465031397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 4
+        width: 96
+        height: 128
+      alignment: 9
+      pivot: {x: 0.43465504, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b13ee31b18840360800000000000000
+      internalID: 7134977359541580210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 125
+        height: 132
+      alignment: 9
+      pivot: {x: 0.3060731, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acbe523c742c1900800000000000000
+      internalID: 656439761528863906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 126
+        height: 132
+      alignment: 9
+      pivot: {x: 0.3356001, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4c490d39d33f230800000000000000
+      internalID: 3671345826305983659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_6
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 0
+        width: 124
+        height: 132
+      alignment: 9
+      pivot: {x: 0.28921017, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5967f5dc08bd6bf0800000000000000
+      internalID: -329404832459298465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_7
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 0
+        width: 120
+        height: 131
+      alignment: 9
+      pivot: {x: 0.2829838, y: 0.5065352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180ce4bfc98be35a0800000000000000
+      internalID: -6539586624524730239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_10
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 0
+        width: 124
+        height: 132
+      alignment: 9
+      pivot: {x: 0.2976409, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb6cde1ce40736a0800000000000000
+      internalID: -6469696927517873177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueSMG_11
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 124
+        height: 132
+      alignment: 9
+      pivot: {x: 0.33017412, y: 0.48479834}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c53fcb6f430f3c30800000000000000
+      internalID: 4341192205454489033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2324d73f56928e74e84990dd4db48919
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
