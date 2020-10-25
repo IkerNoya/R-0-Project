@@ -10,8 +10,12 @@ public class BossLaserSphere : MonoBehaviour {
     private void Start() {
         Destroy(this.gameObject, 1.5f);
         StartCoroutine(LateStart());
-        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
-        direction = boss.target.position - transform.position;
+        GameObject go = GameObject.FindGameObjectWithTag("Boss");
+        if(go != null)
+            boss = go.GetComponent<Boss>();
+        if (boss != null)
+            if(boss.target != null)
+                direction = boss.target.position - transform.position;
     }
     private void Update() {
         transform.position += direction.normalized * speed * Time.deltaTime;
