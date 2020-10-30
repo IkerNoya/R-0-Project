@@ -5,6 +5,7 @@ using UnityEngine;
 using Pathfinding;
 
 public class LevelManager : MonoBehaviour {
+    public static LevelManager instanceLevelManager;
     [SerializeField] GameObject[] levels;
     [SerializeField] bool proceduralGeneration;
     [SerializeField] ProceduralGeneratorLevel proceduralGeneratorLevel;
@@ -12,6 +13,8 @@ public class LevelManager : MonoBehaviour {
     int currentLevelBackground = 1;
     int indexLevel = 1;
     int currenLevel = 1;
+    int countLevelsDone = 0;
+
     public static event Action<LevelManager> ChangedLevel;
 
     [SerializeField] AstarPath paths;
@@ -37,7 +40,20 @@ public class LevelManager : MonoBehaviour {
         CleanLevel.OnClearLevel -= CheckNextLevel;
         PlayerController.DoorEnter -= ChangeLevel;
     }
-
+    private void Awake()
+    {
+        if (instanceLevelManager == null)
+        {
+            instanceLevelManager = this;
+        }
+        else if (instanceLevelManager != null)
+        {
+            if (instanceLevelManager != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
     private void Start() {
         player = FindObjectOfType<PlayerController>();
         gm = GameManager.instanceGM;
@@ -152,6 +168,10 @@ public class LevelManager : MonoBehaviour {
         }
 
         currenLevel++;
+        countLevelsDone++;
+       
+        
+        
         // int doorToOpen = Random.Range(0, doors.Length);
         // while (doors[doorToOpen] == door.gameObject)
         //     doorToOpen = Random.Range(0, doors.Length);
