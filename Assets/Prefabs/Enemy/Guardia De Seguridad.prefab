@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 2235793594806773587}
   m_Layer: 0
   m_Name: Guardia De Seguridad
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 8853489992321274286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.02, y: -0.41, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -128,6 +128,9 @@ MonoBehaviour:
   soundShotgun: {fileID: 8300000, guid: 9f6c0a9cc9000904cb7e2e9ce56db0cd, type: 3}
   soundRevolver: {fileID: 8300000, guid: e0d3903780ee405498898c7cabc3e7d9, type: 3}
   animator: {fileID: 539494925902005450}
+  layerEnviroment:
+    serializedVersion: 2
+    m_Bits: 512
   test: 0
 --- !u!114 &8853489992321274272
 MonoBehaviour:
@@ -410,6 +413,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1.13}
+  m_Offset: {x: 0, y: 0.049445767}
+  m_Size: {x: 0.3, y: 0.90388155}
   m_Direction: 0

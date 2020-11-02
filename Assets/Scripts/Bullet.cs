@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System;
 
 public class Bullet : MonoBehaviour
 {
@@ -33,7 +33,6 @@ public class Bullet : MonoBehaviour
     float shotgunLifetimeOffset = 0.3f;
     float revolverLifetimeOffset = 0.5f;
 
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -54,26 +53,26 @@ public class Bullet : MonoBehaviour
         if (weaponType.type == Weapons.WeaponType.Shotgun)
         {
             if (user == User.Player)
-                randomDir = new Vector3(Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), 0) + direction;
+                randomDir = new Vector3(UnityEngine.Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), UnityEngine.Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), 0) + direction;
             else if (user == User.Enemy)
-                randomDir = new Vector3(Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), 0) + direction;
+                randomDir = new Vector3(UnityEngine.Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), UnityEngine.Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), 0) + direction;
         }
         else
         {
             if(weaponType.type == Weapons.WeaponType.subMachineGun)
             {
                 if(user == User.Player)
-                    randomDir = new Vector3(Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), 0) + direction;
+                    randomDir = new Vector3(UnityEngine.Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), UnityEngine.Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), 0) + direction;
                 else if(user == User.Enemy)
-                    randomDir = new Vector3(Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), 0) + direction;
+                    randomDir = new Vector3(UnityEngine.Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), UnityEngine.Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), 0) + direction;
 
             }
             else if(weaponType.type == Weapons.WeaponType.Revolver)
             {
                 if(user == User.Player)
-                    randomDir = new Vector3(Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), 0) + direction;
+                    randomDir = new Vector3(UnityEngine.Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), UnityEngine.Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), 0) + direction;
                 else if(user == User.Enemy)
-                    randomDir = new Vector3(Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), 0) + direction;
+                    randomDir = new Vector3(UnityEngine.Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), UnityEngine.Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), 0) + direction;
             }
         }
         movement = direction.normalized * speed;
@@ -92,6 +91,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject, lifeTime + revolverLifetimeOffset);
                 break;
         }
+
         transform.rotation = Quaternion.Euler(0, 0, 90);
     }
 
