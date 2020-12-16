@@ -17,8 +17,6 @@ public class SecurityGuard : Enemy {
 
     [SerializeField] Animator animator;
 
-    [SerializeField] LayerMask layerEnviroment;
-
     public enum EstadosGuardia {
         Idle,
         Perseguir,
@@ -156,6 +154,15 @@ public class SecurityGuard : Enemy {
         animator.SetBool("Run_Pistol", true);
     }
 
+
+
+
+
+
+
+
+
+
     public void CheckPlayerInRangePerseguir() {
         Vector3 currentDistance = Vector3.zero;
         if (currentTarget != null) {
@@ -173,20 +180,9 @@ public class SecurityGuard : Enemy {
     public void CheckPlayerInRangeAttack() {
         Vector3 currentDistance = Vector3.zero;
         if (currentTarget != null) {
-            Vector3 direction = currentTarget.position - transform.position;
-            //Debug.DrawRay(transform.position, direction, Color.green, 1);
             currentDistance = transform.position - currentTarget.position;
             if (currentDistance.magnitude <= distanceInAttackRange) {
-                if (!Physics2D.Raycast(transform.position, direction, direction.magnitude, layerEnviroment))
-                {
-                    //Debug.DrawRay(transform.position, direction, Color.green, 1);
-                    fsm.SendEvent((int)EventosGuardia.EnRangoDeAtaque);
-                }
-                else
-                {
-                    fsm.SendEvent((int)EventosGuardia.FueraDeRangoDeAtaque);
-                }
-
+                fsm.SendEvent((int)EventosGuardia.EnRangoDeAtaque);
             }
             else {
                 fsm.SendEvent((int)EventosGuardia.FueraDeRangoDeAtaque);

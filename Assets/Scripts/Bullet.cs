@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System;
+
 
 public class Bullet : MonoBehaviour
 {
@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
     float shotgunLifetimeOffset = 0.3f;
     float revolverLifetimeOffset = 0.5f;
 
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -53,26 +54,26 @@ public class Bullet : MonoBehaviour
         if (weaponType.type == Weapons.WeaponType.Shotgun)
         {
             if (user == User.Player)
-                randomDir = new Vector3(UnityEngine.Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), UnityEngine.Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), 0) + direction;
+                randomDir = new Vector3(Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), Random.Range(-PlayerShotgunRecoil, PlayerShotgunRecoil), 0) + direction;
             else if (user == User.Enemy)
-                randomDir = new Vector3(UnityEngine.Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), UnityEngine.Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), 0) + direction;
+                randomDir = new Vector3(Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), Random.Range(-EnemyShotgunRecoil, EnemyShotgunRecoil), 0) + direction;
         }
         else
         {
             if(weaponType.type == Weapons.WeaponType.subMachineGun)
             {
                 if(user == User.Player)
-                    randomDir = new Vector3(UnityEngine.Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), UnityEngine.Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), 0) + direction;
+                    randomDir = new Vector3(Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), Random.Range(-PlayerSubMachineGunRecoil, PlayerSubMachineGunRecoil), 0) + direction;
                 else if(user == User.Enemy)
-                    randomDir = new Vector3(UnityEngine.Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), UnityEngine.Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), 0) + direction;
+                    randomDir = new Vector3(Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), Random.Range(-EnemySubMachineGunRecoil, EnemySubMachineGunRecoil), 0) + direction;
 
             }
             else if(weaponType.type == Weapons.WeaponType.Revolver)
             {
                 if(user == User.Player)
-                    randomDir = new Vector3(UnityEngine.Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), UnityEngine.Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), 0) + direction;
+                    randomDir = new Vector3(Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), Random.Range(-PlayerRevolverRecoil, PlayerRevolverRecoil), 0) + direction;
                 else if(user == User.Enemy)
-                    randomDir = new Vector3(UnityEngine.Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), UnityEngine.Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), 0) + direction;
+                    randomDir = new Vector3(Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), Random.Range(-EnemyRevolverRecoil, EnemyRevolverRecoil), 0) + direction;
             }
         }
         movement = direction.normalized * speed;
@@ -91,7 +92,6 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject, lifeTime + revolverLifetimeOffset);
                 break;
         }
-
         transform.rotation = Quaternion.Euler(0, 0, 90);
     }
 
@@ -101,34 +101,29 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != null)
+        if (collision.gameObject.CompareTag("Boss"))
         {
-            if (collision.gameObject.CompareTag("Boss"))
-            {
-                Boss b = collision.gameObject.GetComponent<Boss>();
-                if (b != null)
-                    b.ReceiveDamage(GetDamage());
-                float x;
-                if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
-                    x = movement.x;
-                else
-                    x = 0;
-                GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
-                Destroy(gameObject);
-                Destroy(go, 1.0f);
-                return;
-            }
-            if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("WallUp") || collision.gameObject.CompareTag("WallDown"))
-            {
-                float x;
-                if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
-                    x = movement.x;
-                else
-                    x = 0;
-                GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
-                Destroy(gameObject);
-                Destroy(go, 1.0f);
-            }
+            collision.gameObject.GetComponent<Boss>().ReceiveDamage(GetDamage());
+            float x;
+            if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
+                x = movement.x;
+            else
+                x = 0;
+            GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
+            Destroy(gameObject);
+            Destroy(go, 1.0f);
+            return;
+        }
+        if (collision.gameObject.CompareTag("Walls") || collision.gameObject.CompareTag("WallUp") || collision.gameObject.CompareTag("WallDown"))
+        {
+            float x;
+            if ((movement.normalized.x > 0.5f && movement.normalized.x < 0.9f) || (movement.normalized.x < -0.5f && movement.normalized.x > -0.9f))
+                x = movement.x;
+            else
+                x = 0;
+            GameObject go = Instantiate(particles, transform.position, Quaternion.LookRotation(new Vector3(x, -movement.y, 0)));
+            Destroy(gameObject);
+            Destroy(go, 1.0f);
         }
     }
     public void SetUser(User _user)
